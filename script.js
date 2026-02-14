@@ -28,35 +28,36 @@ $(document).ready(function(){
     // Fade-in background music automatically on page load
     var audio = document.getElementById('bg-music');
     
-    // Try to play immediately (some browsers may block)
-    audio.volume = 0;
-    var playPromise = audio.play();
+    // Fade-in music function
+function fadeInMusic(audioElement, duration){
+    audioElement.volume = 0; // start muted
+    audioElement.play().catch(()=>{}); // attempt play
+    var stepTime = 100;
+    var step = stepTime / duration;
+    var fadeInterval = setInterval(function(){
+        if(audioElement.volume < 1.0){
+            audioElement.volume = Math.min(audioElement.volume + step, 1.0);
+        } else {
+            clearInterval(fadeInterval);
+        }
+    }, stepTime);
+}
 
-    if (playPromise !== undefined) {
-        playPromise
-            .then(() => {
-                // Music started successfully
-                fadeInMusic(audio, 5000); // 5-second fade-in
-            })
-            .catch(() => {
-                // Browser blocked autoplay, fall back to first click
-                $(document).one('click', function(){
-                    audio.play();
-                    fadeInMusic(audio, 5000);
-                });
+// Music element
+var audio = document.getElementById('bg-music');
+
+// Try autoplay first
+var playPromise = audio.play();
+if(playPromise !== undefined){
+    playPromise
+        .then(()=>fadeInMusic(audio, 5000)) // autoplay allowed
+        .catch(()=> {
+            // Autoplay blocked → wait for first click
+            $(document).one('click', function(){
+                fadeInMusic(audio, 5000);
             });
-    }
+        });
+}
 
-    // Function to fade in music
-    function fadeInMusic(audioElement, duration) {
-        var stepTime = 100;
-        var step = stepTime / duration;
-        var fadeInterval = setInterval(function(){
-            if(audioElement.volume < 1.0){
-                audioElement.volume = Math.min(audioElement.volume + step, 1.0);
-            } else {
-                clearInterval(fadeInterval);
-            }
-        }, stepTime);
-    }
 });
+
