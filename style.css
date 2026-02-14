@@ -7,24 +7,24 @@ body {
     align-items: center;
     min-height: 100vh;
     color: #3f3339;
-
-    /* Gradient + texture + overlay for more emphasis */
     background:
-      linear-gradient(to bottom, rgba(254, 246, 240, 0.95), rgba(232, 223, 234, 0.95)), /* light pastel gradient with slight opacity */
-      url('https://www.transparenttextures.com/patterns/papyrus.png'); /* subtle paper texture */
+      linear-gradient(to bottom, rgba(254, 246, 240, 0.95), rgba(232, 223, 234, 0.95)),
+      url('https://www.transparenttextures.com/patterns/papyrus.png');
     background-size: cover;
     background-repeat: repeat;
-    background-blend-mode: multiply; /* emphasize texture */
+    background-blend-mode: multiply;
+    padding: 10px;
+    box-sizing: border-box;
 }
   
 .book-container {
-    width: 90%;
-    max-width: 800px;
-    height: 600px;
+    width: 100%;
+    max-width: 900px;
+    aspect-ratio: 4/3; /* maintains book ratio */
     margin: 20px auto;
-    overflow: hidden; 
+    overflow: hidden;
     position: relative;
-    z-index: 1; /* makes sure pages appear above background texture */
+    z-index: 1;
 }
 
 #book {
@@ -35,7 +35,7 @@ body {
 .page {
     width: 100%;
     height: 100%;
-    background: #fff9f5; /* soft cream page background */
+    background: #fff9f5;
     display: flex;
     flex-direction: column;
     justify-content: center;  
@@ -46,11 +46,14 @@ body {
     backface-visibility: hidden;
     transform-style: preserve-3d;
     color: #3f3339;
+    padding: 10px;
+    box-sizing: border-box;
 }
 
 .page img {
-    width: 80%;
-    height: 400px;
+    width: 100%;
+    height: auto;
+    max-height: 70%;
     object-fit: cover;
     border-radius: 10px;
     margin: 0;
@@ -58,29 +61,31 @@ body {
 }
 
 .note {
-    margin-top: 15px;
+    margin-top: 10px;
     font-style: italic;
     color: #5c4b52;
     font-weight: 500;
+    font-size: clamp(14px, 2vw, 18px); /* responsive font */
 }
 
 .cover h1 {
     font-family: 'Great Vibes', cursive;
-    font-size: 60px;
+    font-size: clamp(40px, 8vw, 60px);
     color: #a77ebf;
     text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
 }
 
 .cover p {
     font-style: italic;
-    margin-top: 20px;
+    margin-top: 15px;
     color: #7e6080;
     font-weight: 500;
+    font-size: clamp(14px, 2vw, 18px);
 }
 
 .back-cover h2 {
     font-family: 'Great Vibes', cursive;
-    font-size: 50px;
+    font-size: clamp(35px, 7vw, 50px);
     color: #a77ebf;
     text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
 }
@@ -88,13 +93,14 @@ body {
 .nav-buttons {
     display: flex;
     justify-content: center;
-    gap: 20px;
-    margin-top: 10px;
+    gap: 15px;
+    margin-top: 15px;
+    flex-wrap: wrap;
 }
 
 .nav-buttons button {
     padding: 10px 20px;
-    font-size: 16px;
+    font-size: clamp(14px, 2vw, 16px);
     cursor: pointer;
     border: none;
     border-radius: 5px;
