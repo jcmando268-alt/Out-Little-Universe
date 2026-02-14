@@ -26,7 +26,7 @@ $(document).ready(function(){
     });
 
     // Fade-in background music automatically on page load
-    var audio = document.getElementById('bg-music');
+    var audio = document.getElementById('intro.mp3');
     
     // Try to play immediately (some browsers may block)
     audio.volume = 0;
@@ -60,5 +60,6 @@ $(document).ready(function(){
         }, stepTime);
     }
 });
+
 
 
