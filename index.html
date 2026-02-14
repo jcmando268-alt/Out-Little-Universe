@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Our Little Universe</title>
+
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display&display=swap" rel="stylesheet">
+
+<!-- Styles -->
+<link rel="stylesheet" href="style.css">
+
+<!-- jQuery & turn.js v3.1 -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/turn.js/3/turn.min.js"></script>
+</head>
+
+<body>
+
+<!-- Background Music -->
+<audio id="bg-music" loop autoplay>
+  <source src="music/intro.mp3" type="audio/mp3">
+</audio>
+<body onclick="document.getElementById('bg-music').play()">
+
+
+<!-- Flipbook Container -->
+<div class="book-container">
+  <div id="book">
+
+    <!-- Cover Page -->
+    <div class="page cover">
+      <h1>Our Little <br> Universe</h1>
+      <p>Every page is a memory.</p>
+    </div>
+
+    <!-- Page 1 -->
+    <div class="page">
+      <img src="images/photo1.jpeg" alt="Memory 1">
+      <p class="note">Our first night out.<br> In a place full of rich history, we started ours.</p>
+    </div>
+
+    <!-- Page 2 -->
+    <div class="page">
+      <img src="images/photo2.jpeg" alt="Memory 2">
+      <p class="note">Back when love was just a whisper… <br> and we both heard it.</p>
+    </div>
+
+    <!-- Page 3 -->
+    <div class="page">
+      <img src="images/photo3.jpeg" alt="Memory 3">
+      <p class="note">Some good drinks and your smile.</p>
+    </div>
+
+    <!-- Page 4 -->
+    <div class="page">
+      <img src="images/photo4.jpeg" alt="Memory 4">
+      <p class="note">You don’t see it yet, but my heart does.</p>
+    </div>
+
+    <!-- Page 5 -->
+    <div class="page">
+      <img src="images/photo5.jpeg" alt="Memory 5">
+      <p class="note">Your special day!</p>
+    </div>
+
+    <!-- Page 6 -->
+    <div class="page">
+      <img src="images/photo6.jpeg" alt="Memory 6">
+      <p class="note">Just us, awkward poses, and a love still growing.</p>
+    </div>
+
+    <!-- Page 7 -->
+    <div class="page">
+      <img src="images/photo7.jpeg" alt="Memory 7">
+      <p class="note">Just laughing ourselves out… <br> because happiness looks like you.</p>
+    </div>
+
+    <!-- Page 8 -->
+    <div class="page">
+      <img src="images/photo8.jpeg" alt="Memory 8">
+      <p class="note">Another night out! <br> Smoke from the grill, warmth from us.</p>
+    </div>
+
+    <!-- Page 9 -->
+    <div class="page">
+      <img src="images/photo9.jpeg" alt="Memory 9">
+      <p class="note">With the BGC lights behind us.</p>
+    </div>
+
+    <!-- Page 10 -->
+    <div class="page">
+      <img src="images/photo10.jpeg" alt="Memory 10">
+      <p class="note">The first kitchen we explored...on a rooftop.</p>
+    </div>
+
+    <!-- Page 11 -->
+    <div class="page">
+      <img src="images/photo11.jpeg" alt="Memory 11">
+      <p class="note">Another dose of love… just what I needed.</p>
+    </div>
+    
+    <!-- Page 12 -->
+    <div class="page">
+      <img src="images/photo12.jpeg" alt="Memory 12">
+      <p class="note">Your signature face.</p>
+    </div>
+
+    <!-- Page 13 -->
+    <div class="page">
+      <img src="images/photo13.jpeg" alt="Memory 13">
+      <p class="note">Just a funny photo of us.</p>
+    </div>
+
+    <!-- Page 14 -->
+    <div class="page">
+      <img src="images/photo14.jpeg" alt="Memory 14">
+      <p class="note">You and your jokes while in the elevator.</p>
+    </div>
+
+    <!-- Page 15 -->
+    <div class="page">
+      <img src="images/photo15.jpeg" alt="Memory 15">
+      <p class="note">Our first steak date with no steak ordered... <br> and my ugly-ass bouquet.</p>
+    </div>
+
+    <!-- Page 16 -->
+    <div class="page">
+      <img src="images/photo16.jpg" alt="Memory 16">
+      <p class="note">My graduation photo with you!</p>
+    </div>
+
+    <!-- Page 17 -->
+    <div class="page">
+      <img src="images/photo17.jpg" alt="Memory 17">
+      <p class="note">Graduation... or pre-nup?</p>
+    </div>
+
+    <!-- Page 18 -->
+    <div class="page">
+      <img src="images/photo18.jpeg" alt="Memory 18">
+      <p class="note">My ballerina cappuccina!</p>
+    </div>
+
+    <!-- Page 19 -->
+    <div class="page">
+      <img src="images/photo19.jpeg" alt="Memory 19">
+      <p class="note">Now for the REAL steak date. <br> Escobar's is void as hell.</p>
+    </div>
+
+    <!-- Page 20 -->
+    <div class="page">
+      <img src="images/photo20.jpeg" alt="Memory 20">
+      <p class="note">My beautiful beloved, <br> one year into this story of ours.</p>
+    </div>
+
+    <!-- Back Cover -->
+    <div class="page back-cover">
+      <h2>To be continued…</h2>
+    </div>
+
+  </div>
+</div>
+
+<!-- Navigation Buttons -->
+<div class="nav-buttons">
+  <button id="prev">Previous</button>
+  <button id="next">Next</button>
+</div>
+
+<!-- JS -->
+<script src="script.js"></script>
+</body>
+</html>
